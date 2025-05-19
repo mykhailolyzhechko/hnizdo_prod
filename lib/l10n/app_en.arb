@@ -1,0 +1,346 @@
+{
+  "@@locale": "en",
+  "appTitle": "Hnizdo App",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "welcome": "Welcome to Hnizdo",
+  "@welcome": {
+    "description": "Welcome message on login screen"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Text for login button and screen title"
+  },
+  "register": "Register",
+  "@register": {
+    "description": "Text for register button and screen title"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Label for email field"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Label for password field"
+  },
+  "createNewAccount": "Create new account",
+  "@createNewAccount": {
+    "description": "Text for switching to registration"
+  },
+  "alreadyHaveAccount": "I already have an account",
+  "@alreadyHaveAccount": {
+    "description": "Text for switching to login"
+  },
+  "invalidEmail": "Please enter a valid email",
+  "@invalidEmail": {
+    "description": "Error message for invalid email"
+  },
+  "passwordTooShort": "Password must be at least 6 characters",
+  "@passwordTooShort": {
+    "description": "Error message for short password"
+  },
+  "unexpectedError": "An unexpected error occurred. Please try again.",
+  "@unexpectedError": {
+    "description": "Generic error message"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile screen title"
+  },
+  "dashboard": "Dashboard",
+  "@dashboard": {
+    "description": "Dashboard screen title"
+  },
+  "managerDashboard": "Manager Dashboard",
+  "@managerDashboard": {
+    "description": "Manager dashboard title"
+  },
+  "clientDashboard": "Client Dashboard",
+  "@clientDashboard": {
+    "description": "Client dashboard title"
+  },
+  "eventTypes": "Event Types",
+  "@eventTypes": {
+    "description": "Event types screen title"
+  },
+  "manageEventTypes": "Manage Event Types",
+  "@manageEventTypes": {
+    "description": "Button and title for managing event types"
+  },
+  "addEventType": "Add Event Type",
+  "@addEventType": {
+    "description": "Title for adding new event type"
+  },
+  "editEventType": "Edit Event Type",
+  "@editEventType": {
+    "description": "Title for editing event type"
+  },
+  "eventTypeName": "Event Type Name",
+  "@eventTypeName": {
+    "description": "Label for event type name field"
+  },
+  "baseRate": "Base Rate ($)",
+  "@baseRate": {
+    "description": "Label for base rate field"
+  },
+  "perPersonRate": "Per Person Rate ($)",
+  "@perPersonRate": {
+    "description": "Label for per person rate field"
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Text for add button"
+  },
+  "update": "Update",
+  "@update": {
+    "description": "Text for update button"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Text for cancel button"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Text for delete button"
+  },
+  "deleteConfirmation": "Are you sure you want to delete this event type? This action cannot be undone.",
+  "@deleteConfirmation": {
+    "description": "Confirmation message for deletion"
+  },
+  "eventTypeAdded": "Event type added successfully",
+  "@eventTypeAdded": {
+    "description": "Success message for adding event type"
+  },
+  "eventTypeUpdated": "Event type updated successfully",
+  "@eventTypeUpdated": {
+    "description": "Success message for updating event type"
+  },
+  "eventTypeDeleted": "Event type deleted successfully",
+  "@eventTypeDeleted": {
+    "description": "Success message for deleting event type"
+  },
+  "emptyEventTypeName": "Event type name cannot be empty",
+  "@emptyEventTypeName": {
+    "description": "Error message for empty event type name"
+  },
+  "noEventTypes": "No event types added yet",
+  "@noEventTypes": {
+    "description": "Message when no event types exist"
+  },
+  "unknownType": "Unknown Type",
+  "@unknownType": {
+    "description": "Placeholder for unknown event type"
+  },
+  "date": "Date: {date}",
+  "@date": {
+    "description": "Date label with placeholder",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "guests": "Guests: {count}",
+  "@guests": {
+    "description": "Guests label with placeholder",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price": "Price: ${price}",
+  "@price": {
+    "description": "Price label with placeholder",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "notes": "Notes: {notes}",
+  "@notes": {
+    "description": "Notes label with placeholder",
+    "placeholders": {
+      "notes": {
+        "type": "String"
+      }
+    }
+  },
+  "user": "User: {userId}",
+  "@user": {
+    "description": "User label with placeholder",
+    "placeholders": {
+      "userId": {
+        "type": "String"
+      }
+    }
+  },
+  "all": "All",
+  "@all": {
+    "description": "Label for all items filter"
+  },
+  "pending": "Pending",
+  "@pending": {
+    "description": "Status label for pending events"
+  },
+  "approved": "Approved",
+  "@approved": {
+    "description": "Status label for approved events"
+  },
+  "rejected": "Rejected",
+  "@rejected": {
+    "description": "Status label for rejected events"
+  },
+  "allRequests": "All Requests",
+  "@allRequests": {
+    "description": "Label for viewing all requests"
+  },
+  "noRequests": "No {status} requests found",
+  "@noRequests": {
+    "description": "Message when no requests exist",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "statusUpdated": "Request status updated to {status}",
+  "@statusUpdated": {
+    "description": "Success message for updating status",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "myEvents": "My Events",
+  "@myEvents": {
+    "description": "Title for client's event list"
+  },
+  "noEventRequestsYet": "No Event Requests Yet",
+  "@noEventRequestsYet": {
+    "description": "Message shown when client has no event requests"
+  },
+  "createEventRequest": "Create Event Request",
+  "@createEventRequest": {
+    "description": "Button text to create a new event request"
+  },
+  "createFirstRequest": "Tap the + button below to create your first event request",
+  "@createFirstRequest": {
+    "description": "Help text for creating first request"
+  },
+  "requestNewEvent": "Request New Event",
+  "@requestNewEvent": {
+    "description": "Dialog title for requesting a new event"
+  },
+  "numGuests": "Number of Guests",
+  "@numGuests": {
+    "description": "Label for number of guests field"
+  },
+  "eventDateAndTime": "Event Date & Time",
+  "@eventDateAndTime": {
+    "description": "Label for event date and time field"
+  },
+  "specialRequests": "Special Requests/Notes",
+  "@specialRequests": {
+    "description": "Label for special requests field"
+  },
+  "submit": "Submit",
+  "@submit": {
+    "description": "Text for submit button"
+  },
+  "close": "Close",
+  "@close": {
+    "description": "Text for close button"
+  },
+  "cancelEventRequest": "Cancel Event Request",
+  "@cancelEventRequest": {
+    "description": "Dialog title for cancelling event request"
+  },
+  "cancelConfirmation": "Are you sure you want to cancel this event request? This action cannot be undone.",
+  "@cancelConfirmation": {
+    "description": "Confirmation message for cancelling event request"
+  },
+  "keepIt": "No, Keep It",
+  "@keepIt": {
+    "description": "Button text to cancel deletion"
+  },
+  "yesCancel": "Yes, Cancel It",
+  "@yesCancel": {
+    "description": "Button text to confirm cancellation"
+  },
+  "eventDetails": "Event Details",
+  "@eventDetails": {
+    "description": "Dialog title for event details"
+  },
+  "eventRequestSubmitted": "Event request submitted successfully",
+  "@eventRequestSubmitted": {
+    "description": "Success message for event request submission"
+  },
+  "eventRequestCancelled": "Event request cancelled successfully",
+  "@eventRequestCancelled": {
+    "description": "Success message for event request cancellation"
+  },
+  "rejectionReason": "Rejection Reason:",
+  "@rejectionReason": {
+    "description": "Label for rejection reason"
+  },
+  "noReasonProvided": "No reason provided",
+  "@noReasonProvided": {
+    "description": "Message when no rejection reason is provided"
+  },
+  "nextSteps": "Next Steps:",
+  "@nextSteps": {
+    "description": "Label for next steps"
+  },
+  "waitForContact": "Please wait for the manager to contact you with further details.",
+  "@waitForContact": {
+    "description": "Message for approved events next steps"
+  },
+  "total": "Total",
+  "@total": {
+    "description": "Label for total count in statistics"
+  },
+  "optional": "Optional",
+  "@optional": {
+    "description": "Text for optional fields"
+  },
+  "enterValidNumber": "Please enter a valid number",
+  "@enterValidNumber": {
+    "description": "Error message for invalid number input"
+  },
+  "enterGuests": "Please enter number of guests",
+  "@enterGuests": {
+    "description": "Error message for empty guests field"
+  },
+  "selectEventType": "Please select an event type",
+  "@selectEventType": {
+    "description": "Error message for not selecting event type"
+  },
+  "selectDateTime": "Please select a date and time",
+  "@selectDateTime": {
+    "description": "Error message for not selecting date and time"
+  },
+  "noEventTypesAvailable": "No event types available. Please contact management.",
+  "@noEventTypesAvailable": {
+    "description": "Error message when no event types are available"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "Text for logout button"
+  },
+  "searchChildren": "Search Children",
+  "@searchChildren": {
+      "description": "Label for search field"
+  },
+  "noChildrenFound": "No children found",
+  "@noChildrenFound": {
+      "description": "Message when no children are found"
+  },
+  "children": "Children",
+  "@children": {
+      "description": "Label for children"
+  }
+}
