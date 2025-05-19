@@ -1,13 +1,13 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hnizdo/models/child.dart';
 import 'package:hnizdo/models/contact_info.dart';
 import 'package:hnizdo/providers/child_provider.dart';
 import 'package:hnizdo/providers/contact_info_provider.dart';
 import 'package:hnizdo/utils/image_utils.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ChildFormScreen extends ConsumerStatefulWidget {
   final String? childId;
@@ -104,20 +104,21 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
     final relationshipTypes = ref.watch(relationshipTypesProvider)
         .where((type) => type != 'All') // Remove "All" option for adding contacts
         .toList();
+    final l10n = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
         actions: [
           TextButton(
-            onPressed: _isLoading ? null : _saveChild,
+            onPressed: _isLoading ? null : () => _saveChild(context),
             child: _isLoading 
-                ? const SizedBox(
+                ? SizedBox(
                     width: 20, 
                     height: 20, 
                     child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2),
                   )
-                : const Text('Save', style: TextStyle(color: Colors.white)),
+                : Text(l10n.save, style: TextStyle(color: Colors.white)),
           )
         ],
       ),
@@ -334,7 +335,7 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
                                 ElevatedButton.icon(
                                   onPressed: () => _showAddContactDialog(context, relationshipTypes),
                                   icon: const Icon(Icons.add),
-                                  label: const Text('Add Contact'),
+                                  label: Text(AppLocalizations.of(context)!.addContact),
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Theme.of(context).colorScheme.primary,
                                     foregroundColor: Colors.white,
@@ -649,7 +650,7 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Edit Contact'),
+        title: Text(AppLocalizations.of(context)!.editContact),
         content: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -786,8 +787,8 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Delete Contact'),
-        content: Text('Are you sure you want to delete ${contact.name}?'),
+        title: Text(AppLocalizations.of(context)!.deleteContact),
+        content: Text(AppLocalizations.of(context)!.deleteContactConfirmation(contact.name)),
         actions: [
           TextButton(
             onPressed: () {
@@ -815,18 +816,18 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
               });
               Navigator.of(context).pop();
             },
-            child: const Text('Delete', style: TextStyle(color: Colors.red)),
+            child: Text(AppLocalizations.of(context)!.delete, style: TextStyle(color: Colors.red)),
           ),
         ],
       ),
     );
   }
 
-  void _saveChild() async {
+  void _saveChild(BuildContext context) async {
     // Validate form
     if (!_formKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please fill all required fields')),
+        SnackBar(content: Text(AppLocalizations.of(context)!.fillRequiredFields)),
       );
       return;
     }
@@ -834,7 +835,7 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
     // Check if date of birth is selected
     if (_dateOfBirth == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please select a date of birth')),
+        SnackBar(content: Text(AppLocalizations.of(context)!.selectDateOfBirth)),
       );
       return;
     }
@@ -842,7 +843,7 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
     // Check if at least one contact is added
     if (_contacts.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please add at least one contact')),
+        SnackBar(content: Text(AppLocalizations.of(context)!.addAtLeastOneContact)),
       );
       return;
     }
@@ -867,7 +868,7 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
         if (!mounted) return;
         
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Child added successfully')),
+          SnackBar(content: Text(AppLocalizations.of(context)!.addAtLeastOneContact)),
         );
       } else {
         // Updating an existing child
@@ -885,7 +886,7 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
         if (!mounted) return;
         
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Child updated successfully')),
+          SnackBar(content: Text(AppLocalizations.of(context)!.childUpdated)),
         );
       }
       
@@ -895,7 +896,9 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
       
       final action = widget.childId == null ? 'adding' : 'updating';
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error $action child: $e')),
+        SnackBar(content: Text(action == 'adding'
+            ? AppLocalizations.of(context)!.errorAddingChild(e.toString())
+            : AppLocalizations.of(context)!.errorUpdatingChild(e.toString()))),
       );
     } finally {
       if (mounted) {

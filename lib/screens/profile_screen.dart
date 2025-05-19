@@ -68,7 +68,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '${l10n.update} ${l10n.password}',
+                            l10n.updatePassword,
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           const SizedBox(height: 16),
@@ -77,8 +77,8 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           TextField(
                             controller: _currentPasswordController,
                             decoration: InputDecoration(
-                              labelText: '${l10n.password}',
-                              hintText: '${l10n.password}',
+                              labelText: l10n.password,
+                              hintText: l10n.password,
                               border: const OutlineInputBorder(),
                               suffixIcon: IconButton(
                                 icon: Icon(
@@ -99,8 +99,8 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           TextField(
                             controller: _newPasswordController,
                             decoration: InputDecoration(
-                              labelText: 'New ${l10n.password}',
-                              hintText: 'New ${l10n.password}',
+                              labelText: l10n.updatePassword,
+                              hintText: l10n.updatePassword,
                               border: const OutlineInputBorder(),
                               suffixIcon: IconButton(
                                 icon: Icon(
@@ -121,8 +121,8 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           TextField(
                             controller: _confirmPasswordController,
                             decoration: InputDecoration(
-                              labelText: 'Confirm ${l10n.password}',
-                              hintText: 'Confirm ${l10n.password}',
+                              labelText: l10n.confirmPassword,
+                              hintText: l10n.confirmPassword,
                               border: const OutlineInputBorder(),
                               suffixIcon: IconButton(
                                 icon: Icon(
@@ -214,7 +214,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
       await user?.reauthenticateWithCredential(cred);
       await user?.updatePassword(_newPasswordController.text);
 
-      _showSuccessSnackBar('${l10n.password} ${l10n.update.toLowerCase()}');
+      _showSuccessSnackBar(l10n.passwordUpdated);
       _currentPasswordController.clear();
       _newPasswordController.clear();
       _confirmPasswordController.clear();
@@ -222,7 +222,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
       String message = l10n.unexpectedError;
 
       if (e.code == 'wrong-password') {
-        message = '${l10n.password} ${l10n.rejected.toLowerCase()}';
+        message = l10n.passwordRejected;
       } else if (e.code == 'too-many-requests') {
         message = l10n.unexpectedError;
       }
@@ -260,7 +260,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(l10n.logout),
-        content: Text('${l10n.cancelConfirmation}'),
+        content: Text(l10n.cancelConfirmation),
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).pop(),

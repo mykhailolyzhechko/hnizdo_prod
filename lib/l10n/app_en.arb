@@ -48,46 +48,6 @@
   "@profile": {
     "description": "Profile screen title"
   },
-  "dashboard": "Dashboard",
-  "@dashboard": {
-    "description": "Dashboard screen title"
-  },
-  "managerDashboard": "Manager Dashboard",
-  "@managerDashboard": {
-    "description": "Manager dashboard title"
-  },
-  "clientDashboard": "Client Dashboard",
-  "@clientDashboard": {
-    "description": "Client dashboard title"
-  },
-  "eventTypes": "Event Types",
-  "@eventTypes": {
-    "description": "Event types screen title"
-  },
-  "manageEventTypes": "Manage Event Types",
-  "@manageEventTypes": {
-    "description": "Button and title for managing event types"
-  },
-  "addEventType": "Add Event Type",
-  "@addEventType": {
-    "description": "Title for adding new event type"
-  },
-  "editEventType": "Edit Event Type",
-  "@editEventType": {
-    "description": "Title for editing event type"
-  },
-  "eventTypeName": "Event Type Name",
-  "@eventTypeName": {
-    "description": "Label for event type name field"
-  },
-  "baseRate": "Base Rate ($)",
-  "@baseRate": {
-    "description": "Label for base rate field"
-  },
-  "perPersonRate": "Per Person Rate ($)",
-  "@perPersonRate": {
-    "description": "Label for per person rate field"
-  },
   "add": "Add",
   "@add": {
     "description": "Text for add button"
@@ -104,98 +64,9 @@
   "@delete": {
     "description": "Text for delete button"
   },
-  "deleteConfirmation": "Are you sure you want to delete this event type? This action cannot be undone.",
-  "@deleteConfirmation": {
-    "description": "Confirmation message for deletion"
-  },
-  "eventTypeAdded": "Event type added successfully",
-  "@eventTypeAdded": {
-    "description": "Success message for adding event type"
-  },
-  "eventTypeUpdated": "Event type updated successfully",
-  "@eventTypeUpdated": {
-    "description": "Success message for updating event type"
-  },
-  "eventTypeDeleted": "Event type deleted successfully",
-  "@eventTypeDeleted": {
-    "description": "Success message for deleting event type"
-  },
-  "emptyEventTypeName": "Event type name cannot be empty",
-  "@emptyEventTypeName": {
-    "description": "Error message for empty event type name"
-  },
-  "noEventTypes": "No event types added yet",
-  "@noEventTypes": {
-    "description": "Message when no event types exist"
-  },
-  "unknownType": "Unknown Type",
-  "@unknownType": {
-    "description": "Placeholder for unknown event type"
-  },
-  "date": "Date: {date}",
-  "@date": {
-    "description": "Date label with placeholder",
-    "placeholders": {
-      "date": {
-        "type": "String"
-      }
-    }
-  },
-  "guests": "Guests: {count}",
-  "@guests": {
-    "description": "Guests label with placeholder",
-    "placeholders": {
-      "count": {
-        "type": "String"
-      }
-    }
-  },
-  "price": "Price: ${price}",
-  "@price": {
-    "description": "Price label with placeholder",
-    "placeholders": {
-      "price": {
-        "type": "String"
-      }
-    }
-  },
-  "notes": "Notes: {notes}",
-  "@notes": {
-    "description": "Notes label with placeholder",
-    "placeholders": {
-      "notes": {
-        "type": "String"
-      }
-    }
-  },
-  "user": "User: {userId}",
-  "@user": {
-    "description": "User label with placeholder",
-    "placeholders": {
-      "userId": {
-        "type": "String"
-      }
-    }
-  },
   "all": "All",
   "@all": {
     "description": "Label for all items filter"
-  },
-  "pending": "Pending",
-  "@pending": {
-    "description": "Status label for pending events"
-  },
-  "approved": "Approved",
-  "@approved": {
-    "description": "Status label for approved events"
-  },
-  "rejected": "Rejected",
-  "@rejected": {
-    "description": "Status label for rejected events"
-  },
-  "allRequests": "All Requests",
-  "@allRequests": {
-    "description": "Label for viewing all requests"
   },
   "noRequests": "No {status} requests found",
   "@noRequests": {
@@ -215,34 +86,6 @@
       }
     }
   },
-  "myEvents": "My Events",
-  "@myEvents": {
-    "description": "Title for client's event list"
-  },
-  "noEventRequestsYet": "No Event Requests Yet",
-  "@noEventRequestsYet": {
-    "description": "Message shown when client has no event requests"
-  },
-  "createEventRequest": "Create Event Request",
-  "@createEventRequest": {
-    "description": "Button text to create a new event request"
-  },
-  "createFirstRequest": "Tap the + button below to create your first event request",
-  "@createFirstRequest": {
-    "description": "Help text for creating first request"
-  },
-  "requestNewEvent": "Request New Event",
-  "@requestNewEvent": {
-    "description": "Dialog title for requesting a new event"
-  },
-  "numGuests": "Number of Guests",
-  "@numGuests": {
-    "description": "Label for number of guests field"
-  },
-  "eventDateAndTime": "Event Date & Time",
-  "@eventDateAndTime": {
-    "description": "Label for event date and time field"
-  },
   "specialRequests": "Special Requests/Notes",
   "@specialRequests": {
     "description": "Label for special requests field"
@@ -255,10 +98,6 @@
   "@close": {
     "description": "Text for close button"
   },
-  "cancelEventRequest": "Cancel Event Request",
-  "@cancelEventRequest": {
-    "description": "Dialog title for cancelling event request"
-  },
   "cancelConfirmation": "Are you sure you want to cancel this event request? This action cannot be undone.",
   "@cancelConfirmation": {
     "description": "Confirmation message for cancelling event request"
@@ -270,18 +109,6 @@
   "yesCancel": "Yes, Cancel It",
   "@yesCancel": {
     "description": "Button text to confirm cancellation"
-  },
-  "eventDetails": "Event Details",
-  "@eventDetails": {
-    "description": "Dialog title for event details"
-  },
-  "eventRequestSubmitted": "Event request submitted successfully",
-  "@eventRequestSubmitted": {
-    "description": "Success message for event request submission"
-  },
-  "eventRequestCancelled": "Event request cancelled successfully",
-  "@eventRequestCancelled": {
-    "description": "Success message for event request cancellation"
   },
   "rejectionReason": "Rejection Reason:",
   "@rejectionReason": {
@@ -311,21 +138,9 @@
   "@enterValidNumber": {
     "description": "Error message for invalid number input"
   },
-  "enterGuests": "Please enter number of guests",
-  "@enterGuests": {
-    "description": "Error message for empty guests field"
-  },
-  "selectEventType": "Please select an event type",
-  "@selectEventType": {
-    "description": "Error message for not selecting event type"
-  },
   "selectDateTime": "Please select a date and time",
   "@selectDateTime": {
     "description": "Error message for not selecting date and time"
-  },
-  "noEventTypesAvailable": "No event types available. Please contact management.",
-  "@noEventTypesAvailable": {
-    "description": "Error message when no event types are available"
   },
   "logout": "Logout",
   "@logout": {
@@ -333,14 +148,254 @@
   },
   "searchChildren": "Search Children",
   "@searchChildren": {
-      "description": "Label for search field"
+    "description": "Label for search field"
   },
   "noChildrenFound": "No children found",
   "@noChildrenFound": {
-      "description": "Message when no children are found"
+    "description": "Message when no children are found"
   },
   "children": "Children",
   "@children": {
-      "description": "Label for children"
+    "description": "Label for children"
+  },
+  "newPassword": "New Password",
+  "@newPassword": {
+    "description": "Label for new password field"
+  },
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {
+    "description": "Label for confirm password field"
+  },
+  "passwordUpdated": "Password updated",
+  "@passwordUpdated": {
+    "description": "Success message for password update"
+  },
+  "passwordRejected": "Password rejected",
+  "@passwordRejected": {
+    "description": "Error message for wrong current password"
+  },
+  "updatePassword": "Update Password",
+  "@updatePassword": {
+    "description": "Title for password update form"
+  },
+  "dashboard": "Dashboard",
+  "@dashboard": {
+    "description": "Dashboard screen title"
+  },
+  "kindergartenDashboard": "Kindergarten Dashboard",
+  "@kindergartenDashboard": {
+    "description": "Title of the home screen"
+  },
+  "noChildrenAdded": "No children added yet",
+  "@noChildrenAdded": {
+    "description": "Message when no children have been added"
+  },
+  "addChild": "Add Child",
+  "@addChild": {
+    "description": "Button text to add a child"
+  },
+  "noChildrenMatchFilter": "No children match the \"{filter}\" filter",
+  "@noChildrenMatchFilter": {
+    "description": "Message when no children match the current filter",
+    "placeholders": {
+      "filter": {
+        "type": "String"
+      }
+    }
+  },
+  "active": "Active",
+  "@active": {
+    "description": "Status label for active children"
+  },
+  "inactive": "Inactive",
+  "@inactive": {
+    "description": "Status label for inactive children"
+  },
+  "dateOfBirth": "Date of Birth: {date}",
+  "@dateOfBirth": {
+    "description": "Date of birth display",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "contact": "Contact: {name} ({relationship})",
+  "@contact": {
+    "description": "Contact information display",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "relationship": {
+        "type": "String"
+      }
+    }
+  },
+  "noPrimaryContact": "No primary contact",
+  "@noPrimaryContact": {
+    "description": "Message when no primary contact exists"
+  },
+  "contactUnavailable": "Contact info unavailable",
+  "@contactUnavailable": {
+    "description": "Message when contact info cannot be loaded"
+  },
+  "status": "Status: {status}",
+  "@status": {
+    "description": "Status display",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "viewDetails": "View Details",
+  "@viewDetails": {
+    "description": "Option to view child details"
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Option to edit child"
+  },
+  "filterBy": "Filter by Status",
+  "@filterBy": {
+    "description": "Title for filter options"
+  },
+  "filtered": "Filtered: {filter}",
+  "@filtered": {
+    "description": "Current filter display",
+    "placeholders": {
+      "filter": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteChild": "Delete Child",
+  "@deleteChild": {
+    "description": "Title for delete child confirmation"
+  },
+  "deleteChildConfirmation": "Are you sure you want to delete {name}?",
+  "@deleteChildConfirmation": {
+    "description": "Confirmation message for deleting a child",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "unknown": "Unknown",
+  "@unknown": {
+    "description": "Text for unknown value"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Text for save button"
+  },
+  "addContactInfo": "Add Contact Info",
+  "@addContactInfo": {
+    "description": "Button text for adding contact info"
+  },
+  "contactInfo": "Contact Info",
+  "@contactInfo": {
+    "description": "Section title for contact information"
+  },
+  "addContact": "Add Contact",
+  "@addContact": {
+    "description": "Dialog title for adding contact"
+  },
+  "editContact": "Edit Contact",
+  "@editContact": {
+    "description": "Dialog title for editing contact"
+  },
+  "deleteContact": "Delete Contact",
+  "@deleteContact": {
+    "description": "Dialog title for deleting contact"
+  },
+  "deleteContactConfirmation": "Are you sure you want to delete {name}?",
+  "@deleteContactConfirmation": {
+    "description": "Confirmation message for deleting a contact",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Label for name field"
+  },
+  "relationship": "Relationship",
+  "@relationship": {
+    "description": "Label for relationship field"
+  },
+  "phoneNumber": "Phone Number",
+  "@phoneNumber": {
+    "description": "Label for phone number field"
+  },
+  "alternativePhoneNumber": "Alternative Phone Number",
+  "@alternativePhoneNumber": {
+    "description": "Label for alternative phone number field"
+  },
+  "isPrimaryContact": "Primary Contact",
+  "@isPrimaryContact": {
+    "description": "Label for primary contact checkbox"
+  },
+  "selectGroup": "Select Group",
+  "@selectGroup": {
+    "description": "Label for group selection"
+  },
+  "notes": "Notes",
+  "@notes": {
+    "description": "Label for notes field"
+  },
+  "changePhoto": "Change Photo",
+  "@changePhoto": {
+    "description": "Button text for changing photo"
+  },
+  "takePhoto": "Take Photo",
+  "@takePhoto": {
+    "description": "Option to take a photo"
+  },
+  "chooseFromGallery": "Choose from Gallery",
+  "@chooseFromGallery": {
+    "description": "Option to choose from gallery"
+  },
+  "childAdded": "Child successfully added",
+  "@childAdded": {
+    "description": "Success message for adding a child"
+  },
+  "childUpdated": "Child data successfully updated",
+  "@childUpdated": {
+    "description": "Success message for updating a child"
+  },
+  "fillRequiredFields": "Please fill in all required fields",
+  "@fillRequiredFields": {
+    "description": "Error message for missing required fields"
+  },
+  "selectDateOfBirth": "Please select a date of birth",
+  "@selectDateOfBirth": {
+    "description": "Error message for not selecting date of birth"
+  },
+  "addAtLeastOneContact": "Please add at least one contact",
+  "@addAtLeastOneContact": {
+    "description": "Error message for not adding any contacts"
+  },
+  "errorAddingChild": "Error adding child: {error}",
+  "@errorAddingChild": {
+    "description": "Error message when adding child fails",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUpdatingChild": "Error updating child data: {error}",
+  "@errorUpdatingChild": {
+    "description": "Error message when updating child fails",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
   }
 }

@@ -1,80 +1,401 @@
 {
   "@@locale": "uk",
   "appTitle": "Гніздо",
+  "@appTitle": {
+    "description": "Назва додатку"
+  },
   "welcome": "Ласкаво просимо до Гнізда",
+  "@welcome": {
+    "description": "Привітальне повідомлення на екрані входу"
+  },
   "login": "Увійти",
+  "@login": {
+    "description": "Текст для кнопки входу та заголовка екрана"
+  },
   "register": "Реєстрація",
+  "@register": {
+    "description": "Текст для кнопки реєстрації та заголовка екрана"
+  },
   "email": "Електронна пошта",
+  "@email": {
+    "description": "Мітка для поля електронної пошти"
+  },
   "password": "Пароль",
+  "@password": {
+    "description": "Мітка для поля пароля"
+  },
   "createNewAccount": "Створити новий акаунт",
+  "@createNewAccount": {
+    "description": "Текст для переходу до реєстрації"
+  },
   "alreadyHaveAccount": "У мене вже є акаунт",
+  "@alreadyHaveAccount": {
+    "description": "Текст для переходу до входу"
+  },
   "invalidEmail": "Будь ласка, введіть дійсну електронну адресу",
+  "@invalidEmail": {
+    "description": "Повідомлення про помилку для недійсної електронної пошти"
+  },
   "passwordTooShort": "Пароль повинен містити щонайменше 6 символів",
+  "@passwordTooShort": {
+    "description": "Повідомлення про помилку для короткого пароля"
+  },
   "unexpectedError": "Сталася неочікувана помилка. Будь ласка, спробуйте ще раз.",
+  "@unexpectedError": {
+    "description": "Загальне повідомлення про помилку"
+  },
   "profile": "Профіль",
-  "dashboard": "Панель керування",
-  "managerDashboard": "Панель менеджера",
-  "clientDashboard": "Панель клієнта",
-  "eventTypes": "Типи подій",
-  "manageEventTypes": "Управління типами подій",
-  "addEventType": "Додати тип події",
-  "editEventType": "Редагувати тип події",
-  "eventTypeName": "Назва типу події",
-  "baseRate": "Базова ставка (₴)",
-  "perPersonRate": "Ставка за особу (₴)",
+  "@profile": {
+    "description": "Заголовок екрана профілю"
+  },
   "add": "Додати",
+  "@add": {
+    "description": "Текст для кнопки додавання"
+  },
   "update": "Оновити",
+  "@update": {
+    "description": "Текст для кнопки оновлення"
+  },
   "cancel": "Скасувати",
+  "@cancel": {
+    "description": "Текст для кнопки скасування"
+  },
   "delete": "Видалити",
-  "deleteConfirmation": "Ви впевнені, що хочете видалити цей тип події? Цю дію неможливо скасувати.",
-  "eventTypeAdded": "Тип події успішно додано",
-  "eventTypeUpdated": "Тип події успішно оновлено",
-  "eventTypeDeleted": "Тип події успішно видалено",
-  "emptyEventTypeName": "Назва типу події не може бути порожньою",
-  "noEventTypes": "Поки що не додано жодного типу подій",
-  "unknownType": "Невідомий тип",
-  "date": "Дата: {date}",
-  "guests": "Гості: {count}",
-  "price": "Ціна: {price}₴",
-  "notes": "Примітки: {notes}",
-  "user": "Користувач: {userId}",
+  "@delete": {
+    "description": "Текст для кнопки видалення"
+  },
   "all": "Всі",
-  "pending": "В очікуванні",
-  "approved": "Затверджено",
-  "rejected": "Відхилено",
-  "allRequests": "Всі запити",
+  "@all": {
+    "description": "Мітка для фільтра всіх елементів"
+  },
   "noRequests": "Запитів {status} не знайдено",
+  "@noRequests": {
+    "description": "Повідомлення, коли запити відсутні",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
   "statusUpdated": "Статус запиту оновлено до {status}",
-  "myEvents": "Мої події",
-  "noEventRequestsYet": "Ще немає запитів на події",
-  "createEventRequest": "Створити запит на подію",
-  "createFirstRequest": "Торкніться кнопки + нижче, щоб створити свій перший запит",
-  "requestNewEvent": "Запит на нову подію",
-  "numGuests": "Кількість гостей",
-  "eventDateAndTime": "Дата і час події",
-  "specialRequests": "Особливі запити/примітки",
+  "@statusUpdated": {
+    "description": "Повідомлення про успішне оновлення статусу",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "specialRequests": "Особливі запити/Примітки",
+  "@specialRequests": {
+    "description": "Мітка для поля особливих запитів"
+  },
   "submit": "Надіслати",
+  "@submit": {
+    "description": "Текст для кнопки надсилання"
+  },
   "close": "Закрити",
-  "cancelEventRequest": "Скасувати запит на подію",
-  "cancelConfirmation": "Ви впевнені, що хочете скасувати цей запит? Цю дію неможливо скасувати.",
+  "@close": {
+    "description": "Текст для кнопки закриття"
+  },
+  "cancelConfirmation": "Ви впевнені, що хочете скасувати цей запит події? Цю дію неможливо скасувати.",
+  "@cancelConfirmation": {
+    "description": "Повідомлення підтвердження для скасування запиту події"
+  },
   "keepIt": "Ні, залишити",
+  "@keepIt": {
+    "description": "Текст кнопки для скасування видалення"
+  },
   "yesCancel": "Так, скасувати",
-  "eventDetails": "Деталі події",
-  "eventRequestSubmitted": "Запит на подію успішно надіслано",
-  "eventRequestCancelled": "Запит на подію успішно скасовано",
+  "@yesCancel": {
+    "description": "Текст кнопки для підтвердження скасування"
+  },
   "rejectionReason": "Причина відхилення:",
-  "noReasonProvided": "Причину не вказано",
+  "@rejectionReason": {
+    "description": "Мітка для причини відхилення"
+  },
+  "noReasonProvided": "Причина не вказана",
+  "@noReasonProvided": {
+    "description": "Повідомлення, коли причина відхилення не вказана"
+  },
   "nextSteps": "Наступні кроки:",
-  "waitForContact": "Будь ласка, очікуйте, поки менеджер зв'яжеться з вами для отримання додаткової інформації.",
+  "@nextSteps": {
+    "description": "Мітка для наступних кроків"
+  },
+  "waitForContact": "Будь ласка, чекайте, поки менеджер зв'яжеться з вами для подальших деталей.",
+  "@waitForContact": {
+    "description": "Повідомлення для наступних кроків після затвердження події"
+  },
   "total": "Всього",
+  "@total": {
+    "description": "Мітка для загальної кількості у статистиці"
+  },
   "optional": "Необов'язково",
+  "@optional": {
+    "description": "Текст для необов'язкових полів"
+  },
   "enterValidNumber": "Будь ласка, введіть дійсний номер",
-  "enterGuests": "Будь ласка, введіть кількість гостей",
-  "selectEventType": "Будь ласка, виберіть тип події",
-  "selectDateTime": "Будь ласка, виберіть дату і час",
-  "noEventTypesAvailable": "Немає доступних типів подій. Зверніться до адміністрації.",
+  "@enterValidNumber": {
+    "description": "Повідомлення про помилку для недійсного номера"
+  },
+  "selectDateTime": "Будь ласка, виберіть дату та час",
+  "@selectDateTime": {
+    "description": "Повідомлення про помилку для не вибраної дати та часу"
+  },
   "logout": "Вийти",
+  "@logout": {
+    "description": "Текст для кнопки виходу"
+  },
   "searchChildren": "Пошук дітей",
-  "noChildrenFound": "Діти не знайдені",
-  "children": "Діти"
+  "@searchChildren": {
+    "description": "Мітка для поля пошуку"
+  },
+  "noChildrenFound": "Дітей не знайдено",
+  "@noChildrenFound": {
+    "description": "Повідомлення, коли дітей не знайдено"
+  },
+  "children": "Діти",
+  "@children": {
+    "description": "Мітка для дітей"
+  },
+  "newPassword": "Новий пароль",
+  "@newPassword": {
+    "description": "Мітка для поля нового пароля"
+  },
+  "confirmPassword": "Підтвердіть пароль",
+  "@confirmPassword": {
+    "description": "Мітка для поля підтвердження пароля"
+  },
+  "passwordUpdated": "Пароль оновлено",
+  "@passwordUpdated": {
+    "description": "Повідомлення про успішне оновлення пароля"
+  },
+  "passwordRejected": "Пароль відхилено",
+  "@passwordRejected": {
+    "description": "Повідомлення про помилку для неправильного поточного пароля"
+  },
+  "updatePassword": "Оновити пароль",
+  "@updatePassword": {
+    "description": "Заголовок форми оновлення пароля"
+  },
+  "dashboard": "Панель керування",
+  "@dashboard": {
+    "description": "Dashboard screen title"
+  },
+  "kindergartenDashboard": "Панель керування дитячим садком",
+  "@kindergartenDashboard": {
+    "description": "Заголовок головного екрана"
+  },
+  "noChildrenAdded": "Дітей ще не додано",
+  "@noChildrenAdded": {
+    "description": "Повідомлення, коли дітей ще не додано"
+  },
+  "addChild": "Додати дитину",
+  "@addChild": {
+    "description": "Текст кнопки для додавання дитини"
+  },
+  "noChildrenMatchFilter": "Жодна дитина не відповідає фільтру \"{filter}\"",
+  "@noChildrenMatchFilter": {
+    "description": "Повідомлення, коли жодна дитина не відповідає поточному фільтру",
+    "placeholders": {
+      "filter": {
+        "type": "String"
+      }
+    }
+  },
+  "active": "Активний",
+  "@active": {
+    "description": "Мітка статусу для активних дітей"
+  },
+  "inactive": "Неактивний",
+  "@inactive": {
+    "description": "Мітка статусу для неактивних дітей"
+  },
+  "dateOfBirth": "Дата народження: {date}",
+  "@dateOfBirth": {
+    "description": "Відображення дати народження",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "contact": "Контакт: {name} ({relationship})",
+  "@contact": {
+    "description": "Відображення контактної інформації",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "relationship": {
+        "type": "String"
+      }
+    }
+  },
+  "noPrimaryContact": "Основний контакт відсутній",
+  "@noPrimaryContact": {
+    "description": "Повідомлення, коли основний контакт відсутній"
+  },
+  "contactUnavailable": "Контактна інформація недоступна",
+  "@contactUnavailable": {
+    "description": "Повідомлення, коли контактна інформація недоступна"
+  },
+  "status": "Статус: {status}",
+  "@status": {
+    "description": "Відображення статусу",
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "viewDetails": "Переглянути деталі",
+  "@viewDetails": {
+    "description": "Опція для перегляду деталей дитини"
+  },
+  "edit": "Редагувати",
+  "@edit": {
+    "description": "Опція для редагування дитини"
+  },
+  "filterBy": "Фільтрувати за статусом",
+  "@filterBy": {
+    "description": "Заголовок для опцій фільтру"
+  },
+  "filtered": "Відфільтровано: {filter}",
+  "@filtered": {
+    "description": "Поточний фільтр",
+    "placeholders": {
+      "filter": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteChild": "Видалити дитину",
+  "@deleteChild": {
+    "description": "Заголовок для підтвердження видалення дитини"
+  },
+  "deleteChildConfirmation": "Ви впевнені, що хочете видалити {name}?",
+  "@deleteChildConfirmation": {
+    "description": "Повідомлення підтвердження для видалення дитини",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "unknown": "Невідомо",
+  "@unknown": {
+    "description": "Текст для невідомого значення"
+  },
+  "save": "Зберегти",
+  "@save": {
+    "description": "Text for save button"
+  },
+  "addContactInfo": "Додати контактну інформацію",
+  "@addContactInfo": {
+    "description": "Button text for adding contact info"
+  },
+  "contactInfo": "Контактна інформація",
+  "@contactInfo": {
+    "description": "Section title for contact information"
+  },
+  "addContact": "Додати контакт",
+  "@addContact": {
+    "description": "Dialog title for adding contact"
+  },
+  "editContact": "Редагувати контакт",
+  "@editContact": {
+    "description": "Dialog title for editing contact"
+  },
+  "deleteContact": "Видалити контакт",
+  "@deleteContact": {
+    "description": "Dialog title for deleting contact"
+  },
+  "deleteContactConfirmation": "Ви впевнені, що хочете видалити {name}?",
+  "@deleteContactConfirmation": {
+    "description": "Confirmation message for deleting a contact",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "name": "Ім'я",
+  "@name": {
+    "description": "Label for name field"
+  },
+  "relationship": "Зв'язок",
+  "@relationship": {
+    "description": "Label for relationship field"
+  },
+  "phoneNumber": "Номер телефону",
+  "@phoneNumber": {
+    "description": "Label for phone number field"
+  },
+  "alternativePhoneNumber": "Альтернативний номер телефону",
+  "@alternativePhoneNumber": {
+    "description": "Label for alternative phone number field"
+  },
+  "isPrimaryContact": "Основний контакт",
+  "@isPrimaryContact": {
+    "description": "Label for primary contact checkbox"
+  },
+  "selectGroup": "Виберіть групу",
+  "@selectGroup": {
+    "description": "Label for group selection"
+  },
+  "notes": "Примітки",
+  "@notes": {
+    "description": "Label for notes field"
+  },
+  "changePhoto": "Змінити фото",
+  "@changePhoto": {
+    "description": "Button text for changing photo"
+  },
+  "takePhoto": "Зробити фото",
+  "@takePhoto": {
+    "description": "Option to take a photo"
+  },
+  "chooseFromGallery": "Вибрати з галереї",
+  "@chooseFromGallery": {
+    "description": "Option to choose from gallery"
+  },
+  "childAdded": "Дитину успішно додано",
+  "@childAdded": {
+    "description": "Success message for adding a child"
+  },
+  "childUpdated": "Дані дитини успішно оновлено",
+  "@childUpdated": {
+    "description": "Success message for updating a child"
+  },
+  "fillRequiredFields": "Будь ласка, заповніть усі обов'язкові поля",
+  "@fillRequiredFields": {
+    "description": "Error message for missing required fields"
+  },
+  "selectDateOfBirth": "Будь ласка, виберіть дату народження",
+  "@selectDateOfBirth": {
+    "description": "Error message for not selecting date of birth"
+  },
+  "addAtLeastOneContact": "Будь ласка, додайте принаймні один контакт",
+  "@addAtLeastOneContact": {
+    "description": "Error message for not adding any contacts"
+  },
+  "errorAddingChild": "Помилка додавання дитини: {error}",
+  "@errorAddingChild": {
+    "description": "Error message when adding child fails",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "errorUpdatingChild": "Помилка оновлення даних дитини: {error}",
+  "@errorUpdatingChild": {
+    "description": "Error message when updating child fails",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
 }

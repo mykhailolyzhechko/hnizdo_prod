@@ -4,13 +4,12 @@ import 'package:hnizdo/models/child.dart';
 import 'package:hnizdo/providers/child_provider.dart';
 import 'package:hnizdo/providers/contact_info_provider.dart';
 import 'package:hnizdo/screens/add_child_screen.dart';
-import 'package:hnizdo/screens/child_details_screen.dart';
 import 'package:hnizdo/screens/edit_child_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:hnizdo/utils/image_utils.dart';
 import 'dart:typed_data';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-// Current status filter provider
 final currentStatusFilterProvider = StateProvider<String>((ref) => 'All');
 
 class HomeScreen extends ConsumerWidget {
@@ -23,6 +22,8 @@ class HomeScreen extends ConsumerWidget {
 
     // Get the raw children data directly
     final childrenMap = ref.watch(childrenProvider);
+
+    final l10n = AppLocalizations.of(context)!;
 
     // Create filtered list
     List<Child> filteredChildren = [];
@@ -45,10 +46,10 @@ class HomeScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Kindergarten Dashboard'),
+        title: Text(l10n.children),
         actions: [
           IconButton(
-            icon: const Icon(Icons.filter_list),
+            icon: const Icon(Icons.filter_1),
             onPressed: () => _showFilterOptions(context, ref),
           ),
         ],
@@ -58,19 +59,19 @@ class HomeScreen extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildStatisticsCards(statistics),
+            _buildStatisticsCards(context, statistics),
             const SizedBox(height: 24),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Children',
+                  l10n.children,
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 // Show current filter
                 if (currentFilter != 'All')
                   Chip(
-                    label: Text('Filtered: $currentFilter'),
+                    label: Text(l10n.filtered(currentFilter)),
                     deleteIcon: const Icon(Icons.close, size: 18),
                     onDeleted: () =>
                         ref.read(currentStatusFilterProvider.notifier).state = 'All',
@@ -87,13 +88,13 @@ class HomeScreen extends ConsumerWidget {
                           const Icon(Icons.child_care, size: 64, color: Colors.grey),
                           const SizedBox(height: 16),
                           Text(
-                            'No children added yet',
+                            l10n.noChildrenAdded,
                             style: TextStyle(color: Colors.grey[600]),
                           ),
                           const SizedBox(height: 8),
                           ElevatedButton(
                             onPressed: () => _showAddChildForm(context, ref),
-                            child: const Text('Add Child'),
+                            child: Text(l10n.addChild),
                           ),
                         ],
                       ),
@@ -106,7 +107,7 @@ class HomeScreen extends ConsumerWidget {
                               const Icon(Icons.filter_alt, size: 64, color: Colors.grey),
                               const SizedBox(height: 16),
                               Text(
-                                'No children match the "$currentFilter" filter',
+                                l10n.noChildrenMatchFilter(currentFilter),
                                 style: TextStyle(color: Colors.grey[600]),
                               ),
                             ],
@@ -125,23 +126,24 @@ class HomeScreen extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showAddChildForm(context, ref),
-        tooltip: 'Add Child',
+        tooltip: l10n.addChild,
         child: const Icon(Icons.add),
       ),
     );
   }
 
-  Widget _buildStatisticsCards(Map<String, int> statistics) {
+  Widget _buildStatisticsCards(BuildContext context, Map<String, int> statistics) {
+    final l10n = AppLocalizations.of(context)!;
     return SizedBox(
       height: 100,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
-          _buildStatCard('Total', statistics['total'] ?? 0, Colors.blue),
+          _buildStatCard(l10n.total, statistics['total'] ?? 0, Colors.blue),
           const SizedBox(width: 16),
-          _buildStatCard('Active', statistics['active'] ?? 0, Colors.green),
+          _buildStatCard(l10n.active, statistics['active'] ?? 0, Colors.green),
           const SizedBox(width: 16),
-          _buildStatCard('Inactive', statistics['inactive'] ?? 0, Colors.orange),
+          _buildStatCard(l10n.inactive, statistics['inactive'] ?? 0, Colors.orange),
         ],
       ),
     );
@@ -182,8 +184,9 @@ class HomeScreen extends ConsumerWidget {
   }
 
   Widget _buildChildItem(BuildContext context, WidgetRef ref, Child child) {
+    final l10n = AppLocalizations.of(context)!;
     // Handle the date formatting safely to prevent errors
-    String formattedDate = 'Unknown';
+    String formattedDate = l10n.unknown;
     try {
       formattedDate = DateFormat('dd/MM/yyyy').format(child.dateOfBirth);
     } catch (e) {
@@ -219,21 +222,20 @@ class HomeScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 4),
-            Text('Date of Birth: $formattedDate'),
+            Text(l10n.dateOfBirth(formattedDate)),
             // Contact info is loaded in a separate provider safely
             Builder(builder: (context) {
               try {
                 final primaryContact = ref.watch(primaryContactProvider(child.id));
                 return primaryContact != null
-                    ? Text(
-                        'Contact: ${primaryContact.name} (${primaryContact.relationship})')
-                    : const Text('No primary contact');
+                    ? Text(l10n.contact(primaryContact.name, primaryContact.relationship))
+                    : Text(l10n.noPrimaryContact);
               } catch (e) {
                 print('Error loading primary contact: $e');
-                return const Text('Contact info unavailable');
+                return Text(l10n.contactUnavailable);
               }
             }),
-            Text('Status: ${child.status}'),
+            Text(l10n.status(child.status)),
           ],
         ),
         trailing: PopupMenuButton<String>(
@@ -242,27 +244,21 @@ class HomeScreen extends ConsumerWidget {
               _showEditChildForm(context, ref, child);
             } else if (value == 'delete') {
               _confirmDeleteChild(context, ref, child);
-            } else if (value == 'view') {
-              _showChildDetails(context, ref, child);
             }
           },
           itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-            const PopupMenuItem<String>(
-              value: 'view',
-              child: Text('View Details'),
-            ),
-            const PopupMenuItem<String>(
+            PopupMenuItem<String>(
               value: 'edit',
-              child: Text('Edit'),
+              child: Text(l10n.edit),
             ),
-            const PopupMenuItem<String>(
+            PopupMenuItem<String>(
               value: 'delete',
-              child: Text('Delete'),
+              child: Text(l10n.delete),
             ),
           ],
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        onTap: () => _showChildDetails(context, ref, child),
+        onTap: () => _showEditChildForm(context, ref, child),
       ),
     );
   }
@@ -273,16 +269,17 @@ class HomeScreen extends ConsumerWidget {
     showModalBottomSheet(
       context: context,
       builder: (context) {
+        final l10n = AppLocalizations.of(context)!;
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              title: const Text('Filter by Status'),
+              title: Text(l10n.filterBy),
               enabled: false,
             ),
             const Divider(),
             ListTile(
-              title: const Text('All'),
+              title: Text(l10n.all),
               trailing: currentFilter == 'All' ? const Icon(Icons.check) : null,
               onTap: () {
                 ref.read(currentStatusFilterProvider.notifier).state = 'All';
@@ -290,7 +287,7 @@ class HomeScreen extends ConsumerWidget {
               },
             ),
             ListTile(
-              title: const Text('Active'),
+              title: Text(l10n.active),
               trailing: currentFilter == 'Active' ? const Icon(Icons.check) : null,
               onTap: () {
                 ref.read(currentStatusFilterProvider.notifier).state = 'Active';
@@ -298,7 +295,7 @@ class HomeScreen extends ConsumerWidget {
               },
             ),
             ListTile(
-              title: const Text('Inactive'),
+              title: Text(l10n.inactive),
               trailing: currentFilter == 'Inactive' ? const Icon(Icons.check) : null,
               onTap: () {
                 ref.read(currentStatusFilterProvider.notifier).state = 'Inactive';
@@ -329,33 +326,25 @@ class HomeScreen extends ConsumerWidget {
     );
   }
 
-  void _showChildDetails(BuildContext context, WidgetRef ref, Child child) {
-    // Navigate to a detail view for the child
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) => ChildDetailsScreen(childId: child.id),
-      ),
-    );
-  }
-
   void _confirmDeleteChild(BuildContext context, WidgetRef ref, Child child) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final l10n = AppLocalizations.of(context)!;
         return AlertDialog(
-          title: const Text('Delete Child'),
-          content: Text('Are you sure you want to delete ${child.fullName}?'),
+          title: Text(l10n.deleteChild),
+          content: Text(l10n.deleteChildConfirmation(child.fullName)),
           actions: <Widget>[
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text('Cancel'),
+              child: Text(l10n.cancel),
             ),
             TextButton(
               onPressed: () {
                 ref.read(childrenProvider.notifier).deleteChild(child.id);
                 Navigator.of(context).pop();
               },
-              child: const Text('Delete', style: TextStyle(color: Colors.red)),
+              child: Text(l10n.delete, style: TextStyle(color: Colors.red)),
             ),
           ],
         );
